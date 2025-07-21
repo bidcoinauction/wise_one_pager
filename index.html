@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAP Tokenomics Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0D0B14;
+            --color-surface: #13111B;
+            --color-card: #1A1823;
+            --color-border: #2C2A37;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #A0A0A0;
+            --color-purple-light: #C879FF;
+            --color-purple-dark: #9B51E0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+        }
+        .slide {
+            display: none;
+            min-height: 85vh;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            padding: 1rem;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            position: relative;
+        }
+        .slide-container {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-purple-light), var(--color-purple-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+        }
+        .primary-button {
+             background: linear-gradient(to right, var(--color-purple-light), var(--color-purple-dark));
+             color: var(--color-text-primary);
+        }
+        .primary-button:hover {
+            opacity: 0.9;
+        }
+        .secondary-button {
+            background-color: var(--color-card);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-primary);
+        }
+        .secondary-button:hover {
+            background-color: var(--color-border);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+
+    <div class="w-full max-w-7xl mx-auto bg-[var(--color-surface)] rounded-2xl shadow-2xl overflow-hidden border border-[var(--color-border)]">
+        <main class="p-4 sm:p-8 md:p-12">
+            <div id="slide-container" class="slide-container">
+                <!-- Slide 1: Title -->
+                <div id="slide-1" class="slide active text-center">
+                    <h1 class="text-5xl md:text-7xl font-black gradient-text tracking-tight">DAP Tokenomics</h1>
+                    <h2 class="mt-4 text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">Real Utility, Not Just Hype</h2>
+                </div>
+
+                <!-- Slide 2: Core Principles -->
+                <div id="slide-2" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">Core Principles</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
+                        <div class="card text-center flex flex-col items-center"><h3 class="text-xl font-bold mb-2">Utility-First</h3><p class="text-[var(--color-text-secondary)]">Token unlocks real features and power, not just discounts.</p></div>
+                        <div class="card text-center flex flex-col items-center"><h3 class="text-xl font-bold mb-2">Deflationary Pressure</h3><p class="text-[var(--color-text-secondary)]">Multiple burning mechanisms are built into the ecosystem.</p></div>
+                        <div class="card text-center flex flex-col items-center"><h3 class="text-xl font-bold mb-2">Alignment</h3><p class="text-[var(--color-text-secondary)]">Incentivize both users and data partners to contribute.</p></div>
+                        <div class="card text-center flex flex-col items-center"><h3 class="text-xl font-bold mb-2">Network Effects</h3><p class="text-[var(--color-text-secondary)]">Value grows as the ecosystem and data flows expand.</p></div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: The DAP Flywheel -->
+                <div id="slide-3" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">The <span class="gradient-text">DAP Flywheel</span></h2>
+                    <div class="w-full max-w-4xl text-center">
+                        <p class="text-lg text-[var(--color-text-secondary)] mb-8">DAP is designed to create a self-sustaining cycle where participation directly drives value for all users.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center items-center">
+                            <div class="card p-6"><h3 class="text-2xl font-bold">1. Contribute</h3><p class="text-sm text-[var(--color-text-secondary)] mt-2">Provide value through audits, referrals, and data bounties.</p></div>
+                            <div class="text-2xl font-bold text-[var(--color-purple-light)]">→</div>
+                            <div class="card p-6"><h3 class="text-2xl font-bold">2. Earn DAP</h3><p class="text-sm text-[var(--color-text-secondary)] mt-2">Get rewarded for your contributions to the ecosystem.</p></div>
+                             <div class="text-2xl font-bold text-[var(--color-purple-light)]">→</div>
+                            <div class="card p-6 mt-8 md:mt-0"><h3 class="text-2xl font-bold">3. Use DAP</h3><p class="text-sm text-[var(--color-text-secondary)] mt-2">Spend tokens to access premium data, signals, and governance.</p></div>
+                             <div class="text-2xl font-bold text-[var(--color-purple-light)]">→</div>
+                            <div class="card p-6 mt-8 md:mt-0"><h3 class="text-2xl font-bold">4. Burn DAP</h3><p class="text-sm text-[var(--color-text-secondary)] mt-2">Platform usage burns tokens, reducing supply and increasing value.</p></div>
+                             <div class="text-2xl font-bold text-[var(--color-purple-light)]">↺</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: How to Earn DAP -->
+                <div id="slide-4" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">How to Earn DAP <span class="gradient-text">(Contribute-to-Earn)</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">Audit the Auditors</h3><p class="text-[var(--color-text-secondary)]">Stake DAP to review our data sets. Earn DAP for finding bugs or inaccuracies, boosting trust and aligning incentives.</p></div>
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">B2B Onboarding Bounties</h3><p class="text-[var(--color-text-secondary)]">Stake or burn DAP to nominate projects for audits. If they become a client, you get a referral bonus in DAP.</p></div>
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">Data Mining Bounties</h3><p class="text-[var(--color-text-secondary)]">We post bounties for specific data needs. Stake DAP to participate, and winners receive DAP rewards.</p></div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: How to Use DAP -->
+                <div id="slide-5" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">How to Use DAP <span class="gradient-text">(Platform Utility)</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">Access Premium Data</h3><p class="text-[var(--color-text-secondary)]">Stake DAP for priority access to signals, lower latency, and exclusive "Alpha Drop" reports.</p></div>
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">Govern the Ecosystem</h3><p class="text-[var(--color-text-secondary)]">Use your DAP to vote on which new data feeds, integrations, or platform features to launch next.</p></div>
+                        <div class="card"><h3 class="text-2xl font-bold mb-2">Sponsor New Assets</h3><p class="text-[var(--color-text-secondary)]">Burn DAP to sponsor new tokens or equities for coverage. Be a "Signal Pioneer" and earn a share of the data revenue.</p></div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Distribution & Allocation -->
+                <div id="slide-6" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">Distribution & <span class="gradient-text">Allocation</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl items-center">
+                        <div class="card">
+                             <h3 class="text-2xl font-bold mb-4">Launch Details</h3>
+                             <div class="space-y-3 text-lg">
+                                <p><strong class="text-[var(--color-text-primary)]">Total Supply:</strong> <span class="text-[var(--color-text-secondary)]">200,000,000 DAP</span></p>
+                                <p><strong class="text-[var(--color-text-primary)]">Initial Mint:</strong> <span class="text-[var(--color-text-secondary)]">One-time event, no inflation.</span></p>
+                             </div>
+                        </div>
+                        <div class="card flex flex-col items-center justify-center">
+                            <div class="w-full h-64"><canvas id="allocationChart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Summary -->
+                <div id="slide-7" class="slide">
+                    <h2 class="text-3xl md:text-5xl font-bold text-center mb-10">DAP: The Fuel of the <span class="gradient-text">Signal Economy</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+                        <div class="card text-center"><h3 class="text-xl font-bold mb-2">Real Utility</h3><p class="text-[var(--color-text-secondary)]">Stake for premium signals, vote on new features, and burn to propose new coverage.</p></div>
+                        <div class="card text-center"><h3 class="text-xl font-bold mb-2">Deflationary</h3><p class="text-[var(--color-text-secondary)]">Every API call, report, and premium action burns DAP, decreasing supply as usage grows.</p></div>
+                        <div class="card text-center"><h3 class="text-xl font-bold mb-2">Ecosystem-Driven</h3><p class="text-[var(--color-text-secondary)]">Devs, data scientists, KOLs, and users all earn DAP by driving adoption and quality.</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Navigation -->
+        <footer class="flex justify-between items-center p-4 bg-surface border-t border-border">
+            <button id="prevBtn" class="secondary-button font-bold py-2 px-5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Previous
+            </button>
+            <div id="slide-indicator" class="text-text-secondary text-sm font-medium"></div>
+            <button id="nextBtn" class="primary-button font-bold py-2 px-5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Next
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- SLIDE NAVIGATION ---
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideIndicator = document.getElementById('slide-indicator');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+                });
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                    if (slides[index].id === 'slide-6') {
+                        createAllocationChart();
+                    }
+                }
+                slideIndicator.textContent = `Slide ${index + 1} of ${totalSlides}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            showSlide(currentSlide);
+
+            // --- CHART.JS IMPLEMENTATION ---
+            function createAllocationChart() {
+                const ctx = document.getElementById('allocationChart');
+                if (ctx && !Chart.getChart(ctx)) { // Prevent re-creating chart
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Ecosystem/Growth', 'Team/Treasury', 'Early Backers', 'Market Making'],
+                            datasets: [{
+                                label: 'Token Allocation %',
+                                data: [40, 30, 15, 15],
+                                backgroundColor: [
+                                    'rgba(200, 121, 255, 0.7)',
+                                    'rgba(155, 81, 224, 0.7)',
+                                    'rgba(160, 160, 160, 0.7)',
+                                    'rgba(255, 255, 255, 0.7)'
+                                ],
+                                borderColor: [
+                                    'rgba(200, 121, 255, 1)',
+                                    'rgba(155, 81, 224, 1)',
+                                    'rgba(160, 160, 160, 1)',
+                                    'rgba(255, 255, 255, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            },
+                             scales: {
+                                x: {
+                                    ticks: { color: '#A0A0A0' },
+                                    grid: { color: '#2C2A37' }
+                                },
+                                y: {
+                                    ticks: { color: '#A0A0A0' },
+                                    grid: { display: false }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
