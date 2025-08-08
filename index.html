@@ -1,150 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WiseOne – Modern One Pager</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <style>
-    :root {
-      --color-bg: #0D0B14;
-      --color-card: #1A1823;
-      --color-border: #2C2A37;
-      --color-text-primary: #FFFFFF;
-      --color-text-secondary: #A0A0A0;
-      --color-purple-light: #C879FF;
-      --color-purple-dark: #9B51E0;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text-primary);
-    }
-    .gradient-text {
-      background: linear-gradient(to right, var(--color-purple-light), var(--color-purple-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .card {
-      background-color: var(--color-card);
-      border: 1px solid var(--color-border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-    }
-    .card.popular .badge {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .card.popular:hover .badge {
-      opacity: 1;
-    }
-    .card.popular:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(200, 121, 255, 0.4);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise One: The WiseOne Council</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --color-bg: #0D0B14;
+            --color-surface: #13111B;
+            --color-card: #1A1823;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #A0A0A0;
+            --color-purple-light: #C879FF;
+            --color-purple-dark: #9B51E0;
+            --color-border: #2C2A37;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            scroll-behavior: smooth;
+        }
+        .bg-gradient-purple {
+            background-image: linear-gradient(to right, var(--color-purple-light), var(--color-purple-dark));
+        }
+        .card {
+            background-color: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem; /* 40px */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem; /* 48px */
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-purple-light), var(--color-purple-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .guarantee-card {
+            border: 2px solid var(--color-purple-light);
+            box-shadow: 0 0 25px rgba(200, 121, 255, 0.4);
+            background-color: var(--color-surface);
+        }
+    </style>
 </head>
-<body>
-  <div class="max-w-6xl mx-auto px-6 py-12 space-y-16">
-    <!-- Hero -->
-    <section class="text-center space-y-6" data-aos="fade-up">
-      <h1 class="text-6xl font-black gradient-text">WiseOne</h1>
-      <p class="text-xl text-text-secondary max-w-2xl mx-auto">
-        The Premier Influencer Audit & Performance Platform – bringing transparency, trust, and actionable intelligence to KOL and influencer marketing.
-      </p>
-    </section>
+<body class="antialiased">
 
-    <!-- What is WiseOne -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="card" data-aos="fade-right">
-        <h2 class="text-3xl font-bold mb-4">What is WiseOne?</h2>
-        <p class="text-text-secondary leading-relaxed">
-          Wise One is a next-gen analytics platform for KOL & influencer marketing. Built for crypto, web3, and brands who demand verifiable results, we deliver audited, real-time data to validate campaigns and optimize spend.
-        </p>
-      </div>
-      <div class="card" data-aos="fade-left">
-        <h2 class="text-3xl font-bold mb-4">Unique Value Proposition</h2>
-        <ul class="text-text-secondary space-y-2">
-          <li>• Audited, actionable data via exclusive koat.ai partnership</li>
-          <li>• Transparency and trust backed by verifiable insights</li>
-          <li>• Cost-effective clarity over legacy analytics platforms</li>
-        </ul>
-      </div>
-    </section>
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
 
-    <!-- Key Features -->
-    <section data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-center mb-8">Key Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">Real-Time Monitoring</h3><p class="text-text-secondary">Track KOL and campaign performance as it happens.</p></div>
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">Advanced Scoring</h3><p class="text-text-secondary">Sentiment, manipulation, and engagement analysis.</p></div>
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">AI Classification</h3><p class="text-text-secondary">Separate real engagement from bots at scale.</p></div>
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">White-Glove Reports</h3><p class="text-text-secondary">Consultative reporting and insights on demand.</p></div>
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">Multi-sig Integration</h3><p class="text-text-secondary">Safeguard influencer campaign payments.</p></div>
-        <div class="card" data-aos="zoom-in"> <h3 class="font-bold text-xl mb-3">Flexible Pricing</h3><p class="text-text-secondary">Tiered models for different stages of growth.</p></div>
-      </div>
-    </section>
+        <!-- Header/Hero Section -->
+        <header class="text-center mb-20 md:mb-32">
+            <div class="flex justify-center items-center mb-6">
+                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/wiseone_logo_transparent.png" alt="Wise One Logo" class="w-64">
+            </div>
+            <h1 class="section-title mb-4">Stop Burning Your KOL Budget. <br class="hidden md:block" /> Start Guaranteeing ROI.</h1>
+            <p class="max-w-4xl mx-auto mt-4 text-lg md:text-xl text-[color:var(--color-text-secondary)]">
+                Influencer marketing is a high-stakes game rigged against you. You're paying for vanity metrics, fake followers, and botted engagement. Every dollar spent feels like a gamble with no way to prove it moved the needle. It’s a system that creates a black hole for your budget and leaves you with zero accountability.
+            </p>
+        </header>
 
-    <!-- Who We Serve -->
-    <section data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-center mb-8">Who Is It For?</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="card">Crypto & Web3 Projects</div>
-        <div class="card">Agencies</div>
-        <div class="card">Brands & Enterprises</div>
-        <div class="card">VCs & Accelerators</div>
-      </div>
-    </section>
+        <!-- The Antidote Section -->
+        <section class="mb-20 md:mb-32 text-center">
+            <h2 class="section-title mb-4">The Antidote: <span class="gradient-text">Forensic KOL Analytics</span></h2>
+            <p class="max-w-4xl mx-auto text-lg md:text-xl text-[color:var(--color-text-secondary)]">
+                We combine forensic KOL analytics with hands-on, expert strategy to replace chaos with an auditable system that eliminates waste and guarantees results.
+            </p>
+        </section>
 
-    <!-- Pricing -->
-    <section data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-center mb-8">Flexible Pricing</h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
-        <div class="card"><h3 class="font-bold mb-2">Tier 1</h3><p class="text-text-secondary">500K data points – $2K/mo</p></div>
-        <div class="card"><h3 class="font-bold mb-2">Tier 2</h3><p class="text-text-secondary">1M data points – $4K/mo</p></div>
-        <div class="card popular border-2 border-[var(--color-purple-light)]">
-          <div class="badge absolute -top-4 left-1/2 transform -translate-x-1/2 bg-color-purple-light text-white px-3 py-1 rounded-full text-xs font-bold">Most Popular</div>
-          <h3 class="font-bold mb-2 mt-4">Tier 3</h3><p class="text-text-secondary">2.5M data points – $7.5K/mo</p>
-        </div>
-        <div class="card"><h3 class="font-bold mb-2">Tier 4</h3><p class="text-text-secondary">5M+ data points – $15K+/mo</p></div>
-      </div>
-    </section>
+        <!-- Your Arsenal Section -->
+        <section class="mb-20 md:mb-32">
+            <div class="text-center">
+                 <h2 class="section-title mb-12">Your Arsenal: <span class="gradient-text">The WiseOne Advantage</span></h2>
+                 <p class="max-w-4xl mx-auto text-lg md:text-xl text-[color:var(--color-text-secondary)] mb-12">
+                    You don't just get a dashboard. You get a complete system for predictable growth:
+                 </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">The KOL Command Center</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">Your single source of truth. Go beyond surface-level metrics with real-time analytics and fraud detection.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">Fraud-Filter Engine™</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">Stop paying for bots. Our system identifies fake engagement before you spend, protecting your budget from the start.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">Conversion Impact Tracker™</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">End the guesswork. We attribute real business outcomes—like sales, leads, and sign-ups—to your campaigns, giving you undeniable proof of ROI.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">Global KOL Database</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">Access a pre-vetted roster of high-integrity influencers with fully transparent, verified performance histories.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">Advanced Sentiment AI™</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">Understand the market narrative, not just the numbers. Our AI analyzes sentiment across platforms to ensure your message hits the mark.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-xl mb-2">Your Dedicated Strategist</h3>
+                    <p class="text-[color:var(--color-text-secondary)]">An expert in your corner. We help you design, execute, and optimize every campaign for maximum impact.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section class="mb-20 md:mb-32">
+            <div class="text-center">
+                <h2 class="section-title mb-4">Launch Promo <span class="gradient-text">Pricing</span></h2>
+                <p class="max-w-4xl mx-auto text-lg text-[color:var(--color-text-secondary)] mb-12">
+                    Limited-time discounts to kickstart your next KOL campaign.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold">24HR Pulse</h3>
+                    <p class="text-4xl font-black my-4">$29.99</p>
+                    <p class="text-[color:var(--color-text-secondary)] flex-grow">Backdate a KOL’s last 24 hours and audit the *real* engagement behind a viral post.</p>
+                </div>
+                <div class="card p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold">7-Day Audit</h3>
+                    <p class="text-4xl font-black my-4">$89.99</p>
+                    <p class="text-[color:var(--color-text-secondary)] flex-grow">Analyze a KOL’s full week. See if their performance is consistent or just a fluke spike.</p>
+                </div>
+                <div class="card p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold">30-Day Deep Dive</h3>
+                    <p class="text-4xl font-black my-4">$259.99</p>
+                    <p class="text-[color:var(--color-text-secondary)] flex-grow">Understand the KOL’s reach, manipulation attempts, and long-term impact over a month.</p>
+                </div>
+                <div class="card p-8 flex flex-col lg:col-start-2">
+                    <h3 class="text-2xl font-bold">KOL Subscription</h3>
+                    <p class="text-4xl font-black my-4">$399.99<span class="text-lg font-medium text-[color:var(--color-text-secondary)]">/mo</span></p>
+                    <p class="text-[color:var(--color-text-secondary)] flex-grow">Track KOL impact every 24 hours for 30 days. Includes a full summary report at the end.</p>
+                </div>
+                <div class="card p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold">Custom KOL Audit</h3>
+                    <p class="text-4xl font-black my-4">$599.99</p>
+                    <p class="text-[color:var(--color-text-secondary)] flex-grow">For KOLs who want to prove their value. A full audit to showcase authentic organic reach.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Testimonials -->
-    <section data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-center mb-8">Results & Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="card" data-aos="fade-right">
-          <p class="italic text-text-secondary mb-4">“Wise One helped us identify the real impact of our KOL campaigns and saved us thousands in wasted spend.”</p>
-          <p class="font-bold">- BitLayer Labs</p>
-        </div>
-        <div class="card" data-aos="fade-left">
-          <p class="italic text-text-secondary mb-4">“The only platform that gave us true, actionable data on influencer performance.”</p>
-          <p class="font-bold">- Agency Client</p>
-        </div>
-      </div>
-    </section>
+        <!-- Testimonials -->
+        <section class="mb-20 md:mb-32">
+             <h2 class="section-title text-center mb-12">What Our <span class="gradient-text">Partners Say</span></h2>
+             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card p-8 text-center flex flex-col justify-center">
+                    <p class="text-lg text-[color:var(--color-text-secondary)] italic mb-4">“Wise One helped us identify the real impact of our KOL campaigns and saved us thousands in wasted spend.”</p>
+                    <p class="font-bold text-white">- BitLayer Labs</p>
+                </div>
+                 <div class="card p-8 text-center flex flex-col justify-center">
+                    <p class="text-lg text-[color:var(--color-text-secondary)] italic mb-4">“The only platform that gave us true, actionable data on influencer performance.”</p>
+                    <p class="font-bold text-white">- Agency Client</p>
+                </div>
+             </div>
+        </section>
 
-    <!-- CTA -->
-    <section class="text-center space-y-6" data-aos="fade-up">
-      <h2 class="text-4xl font-bold gradient-text">Ready to Get Started?</h2>
-      <p class="text-text-secondary">Bring clarity, trust, and ROI to your influencer marketing.</p>
-      <button class="px-10 py-4 rounded-xl text-lg font-bold" style="background:linear-gradient(to right,var(--color-purple-light),var(--color-purple-dark));color:var(--color-text-primary);">
-        Request a Demo
-      </button>
-    </section>
-  </div>
+        <!-- CTA Section -->
+        <section class="text-center">
+            <h2 class="section-title mb-4">Stop gambling with your budget.</h2>
+            <p class="max-w-3xl mx-auto text-lg text-[color:var(--color-text-secondary)] mb-8">
+                Turn your KOL spending into a predictable growth engine.
+            </p>
+             <button class="bg-gradient-purple text-white font-bold py-4 px-10 rounded-lg text-xl hover:opacity-90 transition-opacity">
+                Get Your First Report
+            </button>
+        </section>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 800 });</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-[color:var(--color-border)]">
+        <p class="text-[color:var(--color-text-secondary)]">&copy; 2024 Wise One. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
 
